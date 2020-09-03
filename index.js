@@ -16,6 +16,7 @@ app.use(session({
 }));
 
 const oidc = new ExpressOIDC({
+    // issuer: `${process.env.OKTA_ORG_URL}`,
     issuer: `${process.env.OKTA_ORG_URL}/oauth2/default`,
     client_id: process.env.OKTA_CLIENT_ID,
     client_secret: process.env.OKTA_CLIENT_SECRET,
@@ -29,13 +30,21 @@ const oidc = new ExpressOIDC({
     }
 });
 
+
 // ExpressOIDC will attach handlers for the /login and /authorization-code/callback routes
 app.use(oidc.router);
 app.use(cors());
 app.use(bodyParser.json());
 
-app.get('/', (req, res) => {
-  res.send('<h1>Welcome!!</h1>');
+app.get('/home', (req, res) => {
+    res.send('<h1>Welcome!!</div><a href="/login">Login</a>');
 });
 
+app.get('/admin', (req, res) => {
+    res.send('Admin page');
+});
+
+// oidc.on('ready', () => {
+//     app.listen(port, () => console.log('app started'));
+//   });
 app.listen(port, () => console.log(`My Blog App listening on port ${port}!`))

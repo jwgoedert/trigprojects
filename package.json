@@ -4,6 +4,7 @@
   "description": "blog test with okta auth",
   "main": "index.js",
   "scripts": {
+    "start": "./node_modules/.bin/nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "James W. Goedert",
