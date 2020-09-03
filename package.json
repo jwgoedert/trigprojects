@@ -1,0 +1,22 @@
+{
+  "name": "trig-projects",
+  "version": "1.0.0",
+  "description": "blog test with okta auth",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "James W. Goedert",
+  "license": "ISC",
+  "dependencies": {
+    "@okta/oidc-middleware": "^1.0.2",
+    "body-parser": "^1.18.3",
+    "cors": "^2.8.5",
+    "dotenv": "^6.2.0",
+    "express": "^4.16.4",
+    "express-session": "^1.15.6"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.9"
+  }
+}
